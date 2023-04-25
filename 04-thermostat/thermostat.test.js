@@ -15,5 +15,13 @@ describe('Thermostat class', () => {
 
       expect(thermostat.getTemperature()).toBe(22);
     })
+
+    it('should return a lower temperature when down method is called', () => {
+      thermostat.up();
+      thermostat.up();
+      thermostat.down();
+
+      expect(thermostat.getTemperature()).toBe(21);
+    })
   })
 })
