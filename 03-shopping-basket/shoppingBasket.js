@@ -8,13 +8,18 @@ class ShoppingBasket {
   }
 
   getTotalPrice() {
-    return this.total;
+    let totalPrice = this.total;
+    return totalPrice - (totalPrice * this.discount);
   }
 
   addItem(candy) {
     this.basket.push(candy.getName());
     this.total += candy.getPrice();
     return `${candy.getName()} added to the basket.`
+  }
+
+  applyDiscount(discount) {
+    this.discount = discount / 100;
   }
   
 }
@@ -28,8 +33,8 @@ class ShoppingBasket {
 // basket.getTotalPrice();   // 0
 
 // basket.addItem(candy);
-
-// basket.getTotalPrice(); // 4.99
+// basket.applyDiscount(50);
+// console.log(basket.getTotalPrice()); // 4.99
 // basket.addItem(new Candy('Skittle', 3.99));
 // basket.addItem(new Candy('Skittle', 3.99));
 
