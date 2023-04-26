@@ -21,4 +21,10 @@ describe('Pokedex class', () => {
 
     expect(pokedex.all()).toEqual([]);
   })
+
+  // it('returns something when calling a pokemon that doesnt exist', async () => {
+  //   await pokedex.catch('grrr');
+
+  //   expect(pokedex.all()).toEqual([]);
+  // })
 })
