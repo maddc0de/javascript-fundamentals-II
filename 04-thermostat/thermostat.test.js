@@ -26,7 +26,16 @@ describe('Thermostat class', () => {
 
   })
 
+  describe('.down', () => {
+    it('has a minimum possible temperature of 10 degrees', () => {
+      for (let i = 0 ; i < 20 ; i++) {
+        thermostat.down();
+      }
 
+      expect(thermostat.getTemperature()).toBe(10);
+    })
+
+  })
 
   describe('.setPowerSavingMode', () => {
     it('sets a max temperature of 25 degrees when it is on', () => {

@@ -19,6 +19,9 @@ class Thermostat {
   }
 
   down() {
+    if (this.temperature === 10) {
+      return this.temperature;
+    }
     return this.temperature -= 1;
   }
 
