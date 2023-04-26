@@ -14,7 +14,9 @@ class Thermostat {
   up() {
     if (this.is_on && this.temperature >= 25) {
       return this.temperature = 25;
-    }  
+    } else if (this.temperature === 32){
+      return this.temperature;
+    }
     return this.temperature += 1;
   }
 

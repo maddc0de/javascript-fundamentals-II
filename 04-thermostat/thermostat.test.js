@@ -48,14 +48,14 @@ describe('Thermostat class', () => {
       expect(thermostat.getTemperature()).toBe(25);
     })
 
-    it('does not have a max temperature of 25 when it is off', () => {
+    it('should have a maximum temperature of 32 degrees when it is off', () => {
       thermostat.setPowerSavingMode(false);
 
-      for (let i = 0 ; i < 6 ; i++) {
+      for (let i = 0 ; i < 20 ; i++) {
         thermostat.up();
       }
 
-      expect(thermostat.getTemperature()).toBe(26);
+      expect(thermostat.getTemperature()).toBe(32);
     })
 
   })
