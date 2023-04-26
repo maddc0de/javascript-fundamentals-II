@@ -12,9 +12,8 @@ const fetchPokemon = require('./api')
 
 describe('fetchPokemon', () => {
   it('Can fetch the data for Charizard', async () => {
-    const pokemon = await fetchPokemon('charizard')
-
-    // console.log(fetchPokemon('charizard'));  -> prints Promise { <pending> }
+    const pokemon = await fetchPokemon('charizard');
+     // console.log(fetchPokemon('charizard'));  -> prints Promise { <pending> }
     expect(pokemon.id).toEqual(6);
   });
 });
