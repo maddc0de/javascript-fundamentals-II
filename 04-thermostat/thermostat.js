@@ -30,6 +30,22 @@ class Thermostat {
   reset() {
     return this.temperature = 20;
   }
+
+  getEnergyUsage() {
+    let energyUsage;
+    switch (true) {
+      case (this.temperature < 18):
+        energyUsage = "low-usage";
+        break;
+      case (this.temperature < 26):
+        energyUsage = "medium-usage";
+        break;
+      case (this.temperature > 25):
+        energyUsage = "high-usage";
+        break;
+    };
+    return energyUsage
+  }
 }
 
 module.exports = Thermostat;

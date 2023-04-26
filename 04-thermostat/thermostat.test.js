@@ -60,13 +60,39 @@ describe('Thermostat class', () => {
 
   })
 
-
   describe('.reset', () => {
     it('sets the temperature back to its default value of 20', () => {
       thermostat.up();
       thermostat.reset();
 
       expect(thermostat.getTemperature()).toBe(20);
+    })
+
+  })
+
+  describe('.getEnergyUsage', () => {
+    it('returns low-usage when temperature is less than 18 degrees', () => {
+      for (let i = 0 ; i < 5 ; i++) {
+        thermostat.down();
+      }
+
+      expect(thermostat.getEnergyUsage()).toEqual("low-usage");
+    })
+
+    it('returns medium-usage when temperature is between 17 to 26 degrees', () => {
+      for (let i = 0 ; i < 2 ; i++) {
+        thermostat.down();
+      }
+  
+      expect(thermostat.getEnergyUsage()).toEqual("medium-usage");
+    })
+
+    it('returns high-usage when temperature is more than 25 degrees', () => {
+      for (let i = 0 ; i < 7 ; i++) {
+        thermostat.up();
+      }
+      console.log(thermostat.getTemperature());
+      expect(thermostat.getEnergyUsage()).toEqual("high-usage");
     })
 
   })
