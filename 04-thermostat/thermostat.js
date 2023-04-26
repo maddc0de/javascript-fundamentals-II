@@ -44,7 +44,7 @@ class Thermostat {
         energyUsage = "high-usage";
         break;
     };
-    return energyUsage
+    return energyUsage;
   }
 }
 
