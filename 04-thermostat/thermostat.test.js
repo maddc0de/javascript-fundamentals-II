@@ -23,5 +23,43 @@ describe('Thermostat class', () => {
 
       expect(thermostat.getTemperature()).toBe(21);
     })
+
   })
+
+
+
+  describe('.setPowerSavingMode', () => {
+    it('sets a max temperature of 25 degrees when it is on', () => {
+      thermostat.setPowerSavingMode(true);
+
+      for (let i = 0 ; i < 10 ; i++) {
+        thermostat.up();
+      }
+
+      expect(thermostat.getTemperature()).toBe(25);
+    })
+
+    it('does not have a max temperature of 25 when it is off', () => {
+      thermostat.setPowerSavingMode(false);
+
+      for (let i = 0 ; i < 6 ; i++) {
+        thermostat.up();
+      }
+
+      expect(thermostat.getTemperature()).toBe(26);
+    })
+
+  })
+
+
+  describe('.reset', () => {
+    it('sets the temperature back to its default value of 20', () => {
+      thermostat.up();
+      thermostat.reset();
+
+      expect(thermostat.getTemperature()).toBe(20);
+    })
+
+  })
+
 })
