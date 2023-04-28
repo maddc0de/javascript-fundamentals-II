@@ -19,9 +19,6 @@ class Weather {
 
 // const client = new WeatherClient();
 // const weather = new Weather(client);
-// weather.load('Bristol');
-// console.log(weather.getWeatherData());
-
 
 // const fetchData = async () => {
 //   await weather.load('Bristol');
